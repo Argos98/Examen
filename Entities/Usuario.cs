@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Usuario
+    public class Usuario : BaseEntity
     {
-        string nombreUsuario { get; set; }
+        public string nombreUsuario { get; set; }
+
+        public Usuario() { }
 
     }
+
+
 }
