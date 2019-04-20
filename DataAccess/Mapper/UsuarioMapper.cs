@@ -6,7 +6,7 @@ using Entities;
 
 namespace DataAccess.Mapper
 {
-    class UsuarioMapper : EntityMapper, ISqlStaments, IObjectMapper
+    public class UsuarioMapper : EntityMapper, ISqlStaments, IObjectMapper
     {
 
         private const string BD_COL_Nombre_Usuario = "nombreUsuario";
@@ -56,12 +56,26 @@ namespace DataAccess.Mapper
 
         public SqlOperation GetRetriveAllStatement()
         {
-            throw new NotImplementedException();
+            var operation = new SqlOperation
+            {
+                ProcedureName = "Buscar_Clientes"
+            };
+
+            return operation;
         }
 
         public SqlOperation GetRetriveStatement(BaseEntity entity)
         {
-            throw new NotImplementedException();
+            var operation = new SqlOperation
+            {
+                ProcedureName = "Buscar_Cliente"
+            };
+
+            var usuario = (Usuario)entity;
+
+            operation.AddVarcharParam(BD_COL_Nombre_Usuario, usuario.nombreUsuario);
+
+            return operation;
         }
 
         public SqlOperation GetUpdateStatement(BaseEntity entity)
