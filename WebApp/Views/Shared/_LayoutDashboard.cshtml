@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - Flay</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="~/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- CSS Implementing Plugins -->
+    <link href="~/Content/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="~/Content/custombox.min.css" rel="stylesheet" />
+    <link href="~/Content/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/hs.megamenu.css" rel="stylesheet" />
+    <link href="~/Content/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <link href="~/Content/flatpickr.min.css" rel="stylesheet" />
+
+    <link href="~/Content/chartist.min.css" rel="stylesheet" />
+    <link href="~/Content/chartist-plugin-tooltip.css" rel="stylesheet" />
+
+    <!-- CSS Front Template -->
+    <link href="~/Content/theme.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/Content/Site.css">
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-migrate.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script>
+        var page = {
+            type: 'privado'
+        };
+        sessionStorage.setItem('flay', JSON.stringify(page));
+    </script>
+</head>
+<body>
+    @RenderPage("_Header.cshtml")
+
+    <main id="content" role="main">
+        <div class="bg-primary">
+            <div class="container space-top-1 pb-3">
+                <div class="row">
+                    <div class="col-lg-5 order-lg-2 text-lg-right mb-4 mb-lg-0">
+                        <div class="d-flex d-lg-inline-block justify-content-between justify-content-lg-end align-items-center align-items-lg-start">
+                            <!-- Breadcrumb -->
+                            <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
+                                <li class="breadcrumb-item"><a class="breadcrumb-link" href='@Url.Action("Index", "Home")'>Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                            </ol>
+                            <!-- End Breadcrumb -->
+                            <!-- Breadcrumb Nav Toggle Button -->
+                            <div class="d-lg-none">
+                                <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white" aria-label="Toggle navigation" aria-expanded="false" aria-controls="breadcrumbNavBar" data-toggle="collapse" data-target="#breadcrumbNavBar">
+                                    <span id="breadcrumbHamburgerTrigger" class="u-hamburger__box">
+                                        <span class="u-hamburger__inner"></span>
+                                    </span>
+                                </button>
+                            </div>
+                            <!-- End Breadcrumb Nav Toggle Button -->
+                        </div>
+                    </div>
+                    <div class="col-lg-7 order-lg-1">
+                        <!-- User Info -->
+                        <div class="media d-block d-sm-flex align-items-sm-center">
+                            <div class="u-lg-avatar position-relative mb-3 mb-sm-0 mr-3">
+                                <img class="img-fluid rounded-circle" src="../../assets/img/160x160/default-user.png" alt="Image Description">
+                                <span class="badge badge-md badge-outline-success badge-pos badge-pos--bottom-right rounded-circle">
+                                    <span class="fas fa-check"></span>
+                                </span>
+                            </div>
+                            <div class="media-body">
+                                <h1 class="h3 text-white font-weight-medium mb-1">¡Hola, <span class="js-dashboard-name"></span>!</h1>
+                                <span class="d-block text-white js-dashboard-email"></span>
+                            </div>
+                        </div>
+                        <!-- End User Info -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="container space-bottom-1 space-bottom-lg-0">
+                <div class="d-lg-flex justify-content-lg-between align-items-lg-center">
+                    <!-- Navbar -->
+                    <div class="u-header u-header-left-aligned-nav u-header--bg-transparent-lg u-header--white-nav-links z-index-4">
+                        <div class="u-header__section bg-transparent">
+                            <nav class="js-breadcrumb-menu navbar navbar-expand-lg u-header__navbar u-header__navbar--no-space hs-menu-initialized hs-menu-horizontal">
+                                <div id="breadcrumbNavBar" class="collapse navbar-collapse u-header__navbar-collapse">
+                                    @RenderPage("_UserMenu.cshtml")
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- End Navbar -->                   
+                </div>
+            </div>
+        </div>
+        <div class="bg-light">
+            <div class="container space-2">
+                @RenderBody()
+            </div>
+        </div>
+
+    </main>
+
+    @RenderPage("_Footer.cshtml")
+    @Scripts.Render("~/bundles/dashboard")
+
+    <script src="~/Scripts/Views/Cuenta/Sesion.js"></script>
+    <script src="~/Scripts/Views/Dashboard/CommonDashboard.js"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+        $(window).on('load', function () {
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 767.98,
+                hideTimeOut: 0
+            });
+
+            // initialization of HSMegaMenu component
+            $('.js-breadcrumb-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 991.98,
+                hideTimeOut: 0
+            });
+
+            // initialization of svg injector module
+            $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+        });
+
+        $(document).on('ready', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#header'));
+
+            // initialization of unfold component
+            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+                afterOpen: function () {
+                    $(this).find('input[type="search"]').focus();
+                }
+            });
+
+            // initialization of malihu scrollbar
+            $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+            // initialization of forms
+            $.HSCore.components.HSFocusState.init();
+
+            // initialization of form validation
+            $.HSCore.components.HSValidation.init('.js-validate');
+
+            // initialization of autonomous popups
+            $.HSCore.components.HSModalWindow.init('[data-modal-target]', '.js-modal-window', {
+                autonomous: true
+            });
+
+            // initialization of step form
+            $.HSCore.components.HSStepForm.init('.js-step-form');
+
+            // initialization of show animations
+            $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+            // initialization of range datepicker
+            $.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
+
+            // initialization of chart pies
+            var items = $.HSCore.components.HSChartPie.init('.js-pie');
+
+            // initialization of horizontal progress bars
+            var horizontalProgressBars = $.HSCore.components.HSProgressBar.init('.js-hr-progress', {
+                direction: 'horizontal',
+                indicatorSelector: '.js-hr-progress-bar'
+            });
+
+            var verticalProgressBars = $.HSCore.components.HSProgressBar.init('.js-vr-progress', {
+                direction: 'vertical',
+                indicatorSelector: '.js-vr-progress-bar'
+            });
+
+            // initialization of chartist bar charts
+            $.HSCore.components.HSChartistBarChart.init('.js-bar-chart');
+
+            // initialization of chartist area charts
+            $.HSCore.components.HSChartistAreaChart.init('.js-area-chart');
+
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+        });
+    </script>
+</body>
+</html>

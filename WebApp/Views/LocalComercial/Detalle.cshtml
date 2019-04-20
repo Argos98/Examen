@@ -1,0 +1,51 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/LocalComercial/Detalle.js"></script>
+@{
+    ViewBag.Title = "Detalle local comercial";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Detalle local comercial" })
+
+<div class="container space-bottom-md-2">
+    <div class="row no-gutters">
+        <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 shadow-sm p-7 mt-5 mb-5">
+            <!-- Title -->
+            <div class="mb-7">
+                <h1 class="h3 text-primary font-weight-normal mb-0">Detalle de local comercial</h1>
+            </div>
+            <!-- End Title -->
+            <div class="col-12 card shadow-sm p-7">
+                <div class="card-header">
+                    <h2 class="h6">Código:</h2>
+                    <p class="card-text h6" id="CodigoLocalComercial"></p>
+                </div>
+                <div class="card-header">
+                    <h2 class="h6">Nombre:</h2>
+                    <p class="card-text h6" id="Nombre"></p>
+                </div>
+                <div class="card-header">
+                    <h2 class="h6">Monto alquier mensual:</h2>
+                    <p class="card-text h6" id="MontoAlquierMensual"></p>
+                </div>
+                <div class="card-header">
+                    <h2 class="h6">Área de construcción:</h2>
+                    <p class="card-text h6" id="AreaConstruccionM2"></p>
+                </div>
+                <div class="card-header">
+                    <h2 class="h6">Estado:</h2>
+                    <p class="card-text h6" id="Estado"></p>
+                </div>
+            </div>
+            <!-- Button -->
+            <div class="row align-items-center mt-5">
+                <div class="col-12 col-sm-12 text-right">
+                    <div class="col-12 col-sm-12 text-right">
+                        <a class="btn btn-secondary transition-3d-hover" href='@Url.Action("Listar","LocalComercial")' role="button">Regresar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Button -->
+        </div>
+    </div>
+</div>

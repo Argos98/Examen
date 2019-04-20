@@ -1,0 +1,73 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Aerolinea/Detalle.js"></script>
+@{
+    ViewBag.Title = "Detalle aerolínea";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Detalle aerolínea" })
+
+<div class="container space-1 space-bottom-md-3">
+    <div class="row">
+        <nav class="col-4 nav flex-column">
+            <ul class="list-group">
+                <li class="list-group-item"><a href='@Url.Action("Listar", "Avion")'>Aviones</a></li>
+                <li class="list-group-item"><a href=''>Vuelos</a></li>
+                <li class="list-group-item"><a href=''>Tiquetes</a></li>
+            </ul>
+            </nav>
+
+
+        <div class="col-6 card shadow-sm p-7">
+            <!-- Title -->
+            <div class="mb-7">
+                <h1 class="h3 text-primary font-weight-normal mb-0">Detalle de aerolínea</h1>
+            </div>
+            <!-- End Title -->
+            <div class="card-header">
+                <h2 class="h6">Registrada en:</h2>
+                <p class="card-text h6" id="span-NombreAeropuerto"></p>
+            </div>
+            <div class="card-header">
+                <h2 class="h6">Cédula jurídica:</h2>
+                <p class="card-text h6" id="CedulaJuridica"></p>
+            </div>
+            <div class="card-header">
+                <h2 class="h6">Razón social:</h2>
+                <p class="card-text h6" id="RazonSocial"></p>
+            </div>
+            <div class="card-header">
+                <h2 class="h6">Nombre comercial:</h2>
+                <p class="card-text h6" id="NombreComercial"></p>
+            </div>
+            <div class="card-header">
+                <h2 class="h6">Año de fundación:</h2>
+                <p class="card-text h6" id="AnoFundacion"></p>
+            </div>
+            <div class="card-header">
+                <h2 class="h6">Sitio Web:</h2>
+                <p class="card-text h6" id="SitioWeb"></p>
+            </div>
+            <div class="card-header">
+                <h2 class="h6">Descripción:</h2>
+                <p class="card-text h6" id="Descripcion"></p>
+            </div>
+            <div class="card-header">
+                <h2 class="h6">Estado:</h2>
+                <p class="card-text h6" id="Estado"></p>
+            </div>
+            <!-- Button -->
+            <div class="row align-items-center mt-5">
+                <div class="col-12 col-sm-12 text-right">
+                    <div class="col-12 col-sm-12 text-right">
+                        <button type="button" class="btn btn-primary transition-3d-hover" id="btn-aprobar">Aprobar</button>
+                        <button type="button" class="btn btn-danger transition-3d-hover" id="btn-rechazar">Rechazar</button>
+                        <a class="btn btn-secondary transition-3d-hover" href='@Url.Action("Listar","Aerolinea")' role="button">Regresar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Button -->
+
+        </div>
+    </div>
+</div>

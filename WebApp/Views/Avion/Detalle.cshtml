@@ -1,0 +1,63 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Avion/Detalle.js"></script>
+@{
+    ViewBag.Title = "Detalle avión";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Detalle avión" })
+
+<div class="container space-bottom-md-2">
+    <div class="row no-gutters">
+        <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 shadow-sm p-7 mt-5 mb-5">
+            <!-- Title -->
+            <div class="mb-7">
+                <h1 class="h3 text-primary font-weight-normal mb-0">Detalle de avión</h1>
+            </div>
+            <!-- End Title -->
+            <div class="col-12 card shadow-sm p-7">
+                <div class="card-header">
+                    <h2 class="h6">Matrícula:</h2>
+                    <p class="card-text h6" id="Matricula"></p>
+                </div>
+                <div class="card-header">
+                    <h2 class="h6">Tipo avión:</h2>
+                    <p class="card-text h6" id="TipoAvion"></p>
+                </div>
+                <div class="card-header">
+                    <h2 class="h6">Fabricante:</h2>
+                    <p class="card-text h6" id="Fabricante"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Capacidad kg:</h2>
+                    <p class="card-text h6" id="CapacidadKg"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Cantidad pasajeros:</h2>
+                    <p class="card-text h6" id="CantidadPasajeros"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Año fabricación:</h2>
+                    <p class="card-text h6" id="AnoFabricacion"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Estado:</h2>
+                    <p class="card-text h6" id="Estado"></p>
+                </div>
+            </div>
+            <!-- Button -->
+            <div class="row align-items-center mt-5">
+                <div class="col-12 col-sm-12 text-right">
+                    <div class="col-12 col-sm-12 text-right">
+                        <a class="btn btn-secondary transition-3d-hover" href='@Url.Action("Listar","Avion")' role="button">Regresar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Button -->
+        </div>
+    </div>
+</div>

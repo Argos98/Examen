@@ -1,0 +1,51 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Parqueo/Detalle.js"></script>
+
+@{
+    ViewBag.Title = "Ver mas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Detalle parqueo" })
+
+<div class="container space-bottom-md-2">
+    <div class="row no-gutters">
+        <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 shadow-sm p-7 mt-5 mb-5">
+            <!-- Title -->
+            <div class="mb-7">
+                <h1 class="h3 text-primary font-weight-normal mb-0">Detalle parqueo</h1>
+            </div>
+            <!-- End Title -->
+            <div class="card-header">
+                <h2 class="h6">Código del parqueo:</h2>
+                <p class="card-text h6" id="CodigoParqueo"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Código del aeropuerto:</h2>
+                    <p class="card-text h6" id="CodigoAeropuerto"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Estado:</h2>
+                    <p class="card-text h6" id="Estado"></p>
+                </div>
+
+
+              <!-- Button -->
+            <div class="row align-items-center mt-5">
+                <div class="col-12 col-sm-12 text-right">
+                    <div class="col-12 col-sm-12 text-right">
+                        <a class="btn btn-secondary transition-3d-hover" href='@Url.Action("Listar","Parqueo")' role="button">Regresar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Button -->
+            </div>
+
+          
+        </div>
+    </div>
+
+

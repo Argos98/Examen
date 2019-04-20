@@ -1,0 +1,30 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Parqueo/Listar.js"></script>
+@{
+    ViewBag.Title = "Parqueos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Parqueos" })
+
+<div class="container space-1">
+    <div class="row justify-content-end">
+        <a class="btn btn-primary" href='@Url.Action("Registrar", "Parqueo")'>Registrar parqueo</a>
+    </div>
+</div>
+
+
+<div class="container space-1 space-bottom-md-2">
+    @Html.CtrlTable(viewName:"Parqueo", id: "tblParqueos", title: "Lista de parqueos registrados",
+    columnsTitle: "Id Parqueo,Código de parqueo,Código Aeropuerto,Estado,Acciones", ColumnsDataName: "IdParqueo,CodigoParqueo,CodigoAeropuerto,Estado", onSelectFunction: "BindFields")
+
+    <div class="row align-items-center mt-3">
+        <div class="col-12 col-sm-12 text-right">
+            <a class="btn btn-secondary transition-3d-hover" href='@Url.Action("Detalle","Aeropuerto")' role="button">Regresar</a>
+        </div>
+    </div>
+</div>
+
+
+
+

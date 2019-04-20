@@ -1,0 +1,36 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Aerolinea/Listar.js"></script>
+@{
+    ViewBag.Title = "Aerolíneas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Aerolíneas" })
+
+<div class="container space-1">
+    <div class="row justify-content-end">
+        <div class="col-6 col-sm-6 text-left">
+            <p>
+                Aerolíneas registradas en:<br />
+                <span class="font-weight-semi-bold" id="span-NombreAeropuerto"></span>
+            </p>
+        </div>
+        <div class="col-6 col-sm-6 text-right">
+            <a class="btn btn-primary" href='@Url.Action("Registrar", "Aerolinea")'>Registrar aerolínea</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="container space-1 space-bottom-md-3">
+    @Html.CtrlTable(viewName: "Listar", id: "tblAerolineas", title: "Lista de aerolíneas registradas",
+    columnsTitle: "IdAerolinea,Cédula jurídca,Razon Social,Nombre comercial,Año Fundación,Sitio Web,Descripción,Estado,Acciones", ColumnsDataName: "IdAerolinea,CedulaJuridica,RazonSocial,NombreComercial,AnoFundacion,SitioWeb,Descripcion,DescripcionEstado", onSelectFunction: "BindFields")
+    <!-- Button -->
+    <div class="row align-items-center mt-3">
+        <div class="col-12 col-sm-12 text-right">
+            <button type="button" class="btn btn-secondary transition-3d-hover" id="btn-regresar">Regresar</button>
+        </div>
+    </div>
+    <!-- End Button -->
+</div>
+

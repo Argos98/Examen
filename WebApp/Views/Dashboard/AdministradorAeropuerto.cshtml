@@ -1,0 +1,85 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Dashboard/CommonDashboard.js"></script>
+<script src="~/Scripts/Views/Dashboard/AdministradorAeropuerto.js"></script>
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<!-- Content Section -->
+<div class="bg-light">
+    <div class="container space-1">
+        <!-- div del loading -->
+        <div class="loader"></div>
+        <!-- Title -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h6 mb-0">Resumen de aeropuerto</h3>
+            <div class="ml-lg-auto">
+                <!-- Button -->
+                <button id="btnActualizarDashboard" type="button" class="btn btn-success text-nowrap transition-3d-hover">
+                    <span class="fas fa-sync small mr-2"></span>
+                    Actualizar dashboard
+                </button>
+                <!-- End Button -->
+            </div>
+        </div>
+        <!-- End Title -->
+        <!-- Stats -->
+        <div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
+            <!-- Card -->
+            @Html.CtrlIndicator("SolicitudAerolineas", "fa-plane", "Total de aerolíneas que solicitan registro", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.RED)
+            <!-- End Card -->
+            <!-- Card -->
+            @Html.CtrlIndicator("TotalAerolineas", "fa-plane", "Total de aerolíneas registradas", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.BLUE)
+            <!-- End Card -->
+            <!-- Card -->
+            @Html.CtrlIndicator("PuertasDisponibles", "fa-door-open", "Total de puertas disponibles", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.GREEN)
+            <!-- End Card -->
+        </div>
+        <!-- End Stats -->
+        <!-- Stats -->
+        <div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
+            <!-- Card -->
+            @Html.CtrlIndicator("TotalVuelos", "fa-plane-departure", "Total de vuelos programados en el mes", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.BLUE)
+            <!-- End Card -->
+            <!-- Card -->
+            @Html.CtrlIndicator("VuelosEfectuados", "fa-plane-departure", "Total de vuelos efectuados en el mes", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.GREEN)
+            <!-- End Card -->
+            <!-- Card -->
+            @Html.CtrlIndicator("VuelosCancelados", "fa-plane", "Total de vuelos cancelados en el mes", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.RED)
+            <!-- End Card -->
+        </div>
+        <!-- End Stats -->
+        <!-- Stats -->
+        <div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
+            <!-- Card -->
+            @Html.CtrlIndicator("TotalLocalesComercialesDisponibles", "fa-store-alt", "Total de locales comerciales disponibles", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.RED)
+            <!-- End Card -->
+            <!-- Card -->
+            @Html.CtrlIndicator("TotalNegocios", "fa-store", "Total de negocios", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.GREEN)
+            <!-- End Card -->
+        </div>
+        <!-- End Stats -->
+        <!-- Stats -->
+        <div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
+            <!-- Card -->
+            @Html.CtrlIndicator("TotalComisionesBoletos", "fa-dollar-sign", "Monto recibido por comisiones de venta de boletos", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.GREEN)
+            <!-- End Card -->
+            <!-- Card -->
+            @Html.CtrlIndicator("TotalMesualidadesAerolineas", "fa-dollar-sign", "Monto recibido por cobro de mensualidades de aerolíneas", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.GREEN)
+            <!-- End Card -->
+            <!-- Card -->
+            @Html.CtrlIndicator("TotalAlquieresLocales", "fa-dollar-sign", "Monto recibido por alquileres de locales comerciales", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.GREEN)
+            <!-- End Card -->
+        </div>
+        <!-- End Stats -->
+
+        <div class="card mb-3 mb-lg-0">
+            <!-- chart -->
+            @Html.CtrlChart(id: "GraficoIngresosAnuales", title: "Total de ingreso en el año " + DateTime.Now.Year.ToString())
+            <!-- End chart -->
+        </div>
+    </div>
+</div>
+<!-- End Content Section -->

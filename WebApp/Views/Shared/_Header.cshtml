@@ -1,0 +1,67 @@
+﻿<header id="headerBrand" class="u-header">
+    <div class="u-header__section">
+        <div class="container u-header__hide-content pt-2">
+            <div class="d-flex align-items-center">
+                <div class="ml-auto">
+                    <!-- Jump To -->
+                    <div class="d-inline-block d-sm-none position-relative mr-2">
+                        <a id="jumpToDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center" href="javascript:;" role="button" aria-controls="jumpToDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#jumpToDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                            Jump to
+                        </a>
+                        <div id="jumpToDropdown" class="dropdown-menu dropdown-unfold u-unfold--css-animation u-unfold--hidden fadeOut" aria-labelledby="jumpToDropdownInvoker" style="animation-duration: 300ms;">
+                            <a class="dropdown-item" href="#">Help</a>
+                            <a class="dropdown-item" href="#">Contacts</a>
+                        </div>
+                    </div>
+                    <!-- End Jump To -->
+                    <!-- Links -->
+                    <div class="d-none d-sm-inline-block ml-sm-auto">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item mr-0">
+                                <a class="u-header__navbar-link" href="#">Ayuda</a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a class="u-header__navbar-link" href="#">Contacto</a>
+                            </li>
+                            <li class="list-inline-item mr-0 js-link-login">
+                                <a class="u-header__navbar-link" href='@Url.Action("InicioSesion", "Cuenta")'>Ingresar</a>
+                            </li>
+                            <li class="list-inline-item d-none js-account-wrap">
+                                <!-- Account Sidebar Toggle Button -->
+                                <a id="sidebarNavToggler" class="btn btn-xs btn-text-secondary u-sidebar--account__toggle-bg ml-1 target-of-invoker-has-unfolds" href="javascript:;" role="button" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent" data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight" data-unfold-duration="500">
+                                    <span class="position-relative">
+                                        <span class="u-sidebar--account__toggle-text ">Hola, <b class="js-account-name"></b></span>
+                                        <img class="u-sidebar--account__toggle-img" src="../../assets/img/160x160/default-user.png" alt="Image Description">
+                                    </span>
+                                </a>
+                                <!-- End Account Sidebar Toggle Button -->
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Links -->
+                </div>
+            </div>
+        </div>
+        <div id="brandLogoAndNav" class="container">
+            <!-- Nav -->
+            <nav class="navbar navbar-expand-md u-header__navbar">
+                <!-- Logo -->
+                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href='@Url.Action("Index", "Home")' aria-label="Front">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="46px" height="46px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
+                    <path fill="#3F7DE0" opacity=".65" d="M23,41L23,41c-9.9,0-18-8-18-18v0c0-9.9,8-18,18-18h11.3C38,5,41,8,41,11.7V23C41,32.9,32.9,41,23,41z" />
+
+                    <path class="fill-info" opacity=".5" d="M28,35.9L28,35.9c-9.9,0-18-8-18-18v0c0-9.9,8-18,18-18l11.3,0C43,0,46,3,46,6.6V18C46,27.9,38,35.9,28,35.9z" />
+
+                    <path class="fill-primary" opacity=".7" d="M18,46L18,46C8,46,0,38,0,28v0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6V28C35.9,38,27.9,46,18,46z" />
+
+                    <path class="fill-white" d="M17.4,34V18.3h10.2v2.9h-6.4v3.4h4.8v2.9h-4.8V34H17.4z" />
+
+                    </svg>
+                    <span class="u-header__navbar-brand-text">Flay</span>
+                </a>
+                <!-- End Logo -->
+            </nav>
+            <!-- End Nav -->
+        </div>
+    </div>
+</header>

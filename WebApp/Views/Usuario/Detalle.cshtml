@@ -1,0 +1,45 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Usuario/Detalle.js"></script>
+@{
+    ViewBag.Title = "Detalle usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Detalle usuario" })
+
+<div class="container space-1 space-bottom-md-3">
+    <div class="row">
+        <nav class="col-4 nav flex-column">
+            <ul class="list-group">
+                <li class="list-group-item"><a href='@Url.Action("Listar", "Usuario")'>Usuarios</a></li>
+                <li class="list-group-item"><a href='@Url.Action("Registrar", "Usuario")'>Registrar usuario</a></li>
+            </ul>
+        </nav>
+
+        <div class="col-8 card shadow-sm p-7">
+            <div class="card-header">
+                <h2 class="h6">Nombre completo:</h2>
+                <p class="card-text h6" id="Nombre"></p>
+            </div>
+            <div class="card-header">
+                <h2 class="h6">Correo electrónico:</h2>
+                <p class="card-text h6" id="CorreoElectronico"></p>
+            </div>
+            <div class="card-header">
+                <h2 class="h6">Identificación:</h2>
+                <p class="card-text h6" id="Identificacion"></p>
+            </div>
+            <div class="card-header">
+                <h2 class="h6">Número de teléfono:</h2>
+                <p class="card-text h6" id="NumeroTelefono"></p>
+            </div>
+            <div class="row align-items-center mt-5">
+                <div class="col-6 col-sm-12 text-right">
+                    <a class="btn btn-secondary transition-3d-hover" href="/Usuario/Listar" role="button">Regresar</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</div>

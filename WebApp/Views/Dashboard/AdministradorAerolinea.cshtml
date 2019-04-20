@@ -1,0 +1,76 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Dashboard/CommonDashboard.js"></script>
+<script src="~/Scripts/Views/Dashboard/AdministradorAerolinea.js"></script>
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<!-- Content Section -->
+<div class="bg-light">
+    <div class="container space-1">
+        <!-- div del loading -->
+        <div class="loader"></div>
+        <!-- Title -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h6 mb-0">Resumen de aerolínea </h3>
+            <div class="ml-lg-auto">
+                <!-- Button -->
+                <button id="btnActualizarDashboard" type="button" class="btn btn-success text-nowrap transition-3d-hover">
+                    <span class="fas fa-sync small mr-2"></span>
+                    Actualizar dashboard
+                </button>
+                <!-- End Button -->
+            </div>
+        </div>
+        <!-- End Title -->
+        <!-- End Stats -->
+        <div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
+            <!-- Card -->
+            @Html.CtrlIndicator("TotalBoletosVendidos", "fa-passport", "Total de boletos vendidos en el mes", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.GREEN)
+            <!-- End Card -->
+            <!-- Card -->
+            @Html.CtrlIndicator("TotalBoletosDisponibles", "fa-passport", "Total de boletos disponibles", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.BLUE)
+            <!-- End Card -->
+        </div>
+
+        <div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
+            <!-- Card -->
+            @Html.CtrlIndicator("TotalIngresoBoletosMes", "fa-hand-holding-usd", "Total de ingresos por venta boletos en el mes", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.GREEN)
+            <!-- End Card -->
+            <!-- Card -->
+            @Html.CtrlIndicator("TotalComisionBoletos", "fa-file-invoice-dollar", "Total de comisión a pagar por venta de boletos en el mes", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.YELLOW)
+            <!-- End Card -->
+            <!-- Card -->
+            @Html.CtrlIndicator("TotalPagarUsoInstalaciones", "fa-file-invoice-dollar", "Total a pagar por uso de instalaciones", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.YELLOW)
+            <!-- End Card -->
+        </div>
+
+        <div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
+            <!-- Card -->
+            @Html.CtrlIndicator("VuelosEfectuados", "fa-plane-departure", "Total de vuelos efectuados en el mes", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.GREEN)
+            <!-- End Card -->
+            <!-- Card -->
+            @Html.CtrlIndicator("VuelosCancelados", "fa-plane", "Total de vuelos cancelados en el mes", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.RED)
+            <!-- End Card -->
+            <!-- Card -->
+            @Html.CtrlIndicator("TotalAviones", "fa-plane", "Total de aviones de la aerolínea", WebApp.Models.Controls.CtrlIndicatorModel.ColorDash.GREEN)
+            <!-- End Card -->
+        </div>
+
+        <div class="card mb-3 mb-lg-3">
+            <!-- chart -->
+            @Html.CtrlChart(id: "GraficoIngresosVentaBoletosAnual", title: "Total de ingresos por venta boletos en el año " + DateTime.Now.Year.ToString())
+            <!-- End chart -->
+        </div>
+
+        <div class="card mb-3 mb-lg-3">
+            <!-- chart -->
+            @Html.CtrlChart(id: "GraficoCantidadBoletosVendiosAnual", title: "Total de boletos vendidos en el año " + DateTime.Now.Year.ToString())
+            <!-- End chart -->
+        </div>
+        <!-- End Stats -->
+    </div>
+</div>
+<!-- End Content Section -->

@@ -1,0 +1,21 @@
+﻿@using WebApp.Helpers
+<script src="~/Scripts/Views/Aeropuerto/Listar.js"></script>
+@{
+    ViewBag.Title = "Aeropuertos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Aeropuertos" })
+
+<div class="container space-1">
+    <div class="row justify-content-end">
+        <a class="btn btn-primary" href='@Url.Action("Registrar", "Aeropuerto")'>Registrar aeropuerto</a>
+    </div>
+</div>
+
+<div class="container space-1 space-bottom-md-3">
+    @Html.CtrlTable(viewName: "Aeropuertos", id: "tblAeropuertos", title: "Lista de aeropuertos registrados",
+    columnsTitle: "Código aeropuerto,Nombre,Código país,País,Código ciudad,Ciudad,Dirección,Latitud,Longitud,Vuelos por hora,Porcentaje de comisión por boleto,Porcentaje de impuesto de ventas,Comisión por uso de una puerta,Comisión por uso de un parqueo,Comisión por uso de una pista,Zona horaria,Moneda,Estado,Acciones", ColumnsDataName: "CodigoAeropuerto,Nombre,CodigoPais,NombrePais,CodigoCiudad,NombreCiudad,Direccion,Latitud,Longitud,VuelosHora,PorcentajeComisionBoletos,PorcentajeImpuestoVentas,ComisionUsoPuerta,ComisionUsoParqueo,ComisionUsoPista,ZonaHoraria,Moneda,Estado", onSelectFunction: "BindFields")
+</div>
+
+

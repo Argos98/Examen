@@ -1,0 +1,651 @@
+﻿@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Title -->
+    <title>WebTech | Desarrollo de Software</title>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <!-- Google Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="~/Content/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/Content/animate.min.css">
+    <link rel="stylesheet" href="~/Content/hs.megamenu.css">
+    <link rel="stylesheet" href="~/Content/jquery.fancybox.css">
+    <link rel="stylesheet" href="~/Content/dzsparallaxer.css">
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="~/Content/theme.css">
+</head>
+<body id="homeSection">
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="u-header u-header--white-bg-on-scroll u-header--sticky-top-md u-header--bg-transparent"
+            data-header-fix-moment="500"
+            data-header-fix-effect="slide">
+        <div class="u-header__section">
+            <div id="logoAndNav" class="container">
+                <!-- Nav -->
+                <nav class="navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+                    <!-- Logo -->
+                    <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="#content" aria-label="Front">
+                        <span class="u-header__navbar-brand-text">
+                            <img src="~/images/web_tech.png" style="width: 100%" />
+                        </span>
+                    </a>
+                    <!-- End Logo -->
+                    <!-- Responsive Toggle Button -->
+                    <button type="button" class="navbar-toggler btn u-hamburger"
+                            aria-label="Toggle navigation"
+                            aria-expanded="false"
+                            aria-controls="navBar"
+                            data-toggle="collapse"
+                            data-target="#navBar">
+                        <span id="hamburgerTrigger" class="u-hamburger__box">
+                            <span class="u-hamburger__inner"></span>
+                        </span>
+                    </button>
+                    <!-- End Responsive Toggle Button -->
+                    <!-- Navigation -->
+                    <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
+                        <ul class="js-scroll-nav js-mega-menu navbar-nav align-items-md-center u-header__navbar-nav">
+                            <li class="nav-item u-header__nav-item">
+                                <a class="nav-link u-header__nav-link" href="#homeSection">Inicio</a>
+                            </li>
+                            <li class="nav-item u-header__nav-item">
+                                <a class="nav-link u-header__nav-link" href="#featuresSection">Fortalezas</a>
+                            </li>
+                            <li>
+                                <a class="nav-link u-header__nav-link" href="#ourStorySection">Nuestra historia</a>
+                            </li>
+                            <li class="nav-item u-header__nav-item">
+                                <a class="nav-link u-header__nav-link" href="#servicesSection">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Navigation -->
+                </nav>
+                <!-- End Nav -->
+            </div>
+        </div>
+    </header>
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main">
+        <!-- Hero Section -->
+        <div id="SVGheroSection" class="svg-preloader d-lg-flex position-relative border-bottom z-index-2">
+            <div class="container d-lg-flex align-items-lg-center flex-lg-wrap height-lg-100vh text-center space-top-2 space-top-md-4 space-top-lg-3">
+                <div class="w-100 mx-auto mb-9 mb-lg-0">
+                    <div class="mb-5">
+                        <h1 class="display-4 font-size-md-down-5 font-weight-semi-bold">Desarrollamos las mejores aplicaciones de software</h1>
+                        <p>WebTech es la empresa que su negocio requiere para dar solución a sus necesidades.</p>
+                    </div>
+                    <div class="small">
+                        <span class="font-weight-medium">Ver un demo:</span>
+                        <a class="link-muted mx-2" href="@Url.Action("Index", "Home")">Mire nuestro demo</a>
+                        <!-- Fancybox -->
+                        <a class="js-fancybox link-muted" href="javascript:;"
+                           data-src="//https://youtu.be/UEP550vuPas"
+                           data-speed="700"
+                           data-animate-in="zoomIn"
+                           data-animate-out="zoomOut"
+                           data-caption="Front - Responsive Website Template">
+                            <small class="fas fa-play text-primary mr-1"></small>
+                            Reproducir video
+                        </a>
+                        <!-- End Fancybox -->
+                    </div>
+                </div>
+                <div class="w-lg-50 mt-auto mx-lg-auto">
+                    <!-- SVG Icon -->
+                    <figure class="ie-enterprise-2">
+                        <img class="js-svg-injector" src="../assets/svg/flat-icons/enterprise-2.svg" alt="Image Description"
+                             data-parent="#SVGheroSection">
+                    </figure>
+                    <!-- End SVG Icon -->
+                </div>
+            </div>
+            <!-- SVG Component -->
+            <div class="d-none d-lg-block content-centered-y left-0 w-100 max-width-40 z-index-n1">
+                <figure class="ie-abstract-shapes-1">
+                    <img class="js-svg-injector" src="../assets/svg/components/abstract-shapes-1.svg" alt="Image Description"
+                         data-parent="#SVGheroSection">
+                </figure>
+            </div>
+            <!-- End SVG Component -->
+            <!-- SVG Component -->
+            <div class="d-none d-lg-block content-centered-y right-0 w-100 max-width-35 z-index-n1">
+                <figure class="ie-abstract-shapes-10">
+                    <img class="js-svg-injector" src="../assets/svg/components/abstract-shapes-10.svg" alt="Image Description"
+                         data-parent="#SVGheroSection">
+                </figure>
+            </div>
+            <!-- End SVG Component -->
+        </div>
+        <!-- End Hero Section -->
+        <!-- Features Section -->
+        <div id="featuresSection" class="container space-2 space-md-3">
+            <!-- Title -->
+            <div class="w-md-80 w-lg-40 text-center mx-md-auto mb-9">
+                <small class="text-secondary text-uppercase font-weight-medium mb-2">Fortalezas</small>
+                <h2 class="h3 font-weight-semi-bold">Todas nuestras habilidades y destrezas están disponibles para su negocio</h2>
+            </div>
+            <!-- End Title -->
+            <div id="SVGmockupBg" class="svg-preloader">
+                <!-- Nav Classic -->
+                <div class="position-relative w-lg-85 bg-white text-center z-index-2 mx-lg-auto">
+                    <ul class="nav nav-classic nav-rounded nav-shadow nav-justified" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-medium active" id="pills-one-tab" data-toggle="pill" href="#pills-one" role="tab" aria-controls="pills-one" aria-selected="true">
+                                <div class="d-md-flex justify-content-md-center align-items-md-center">
+                                    <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                                        <img class="js-svg-injector" src="../assets/svg/icons/icon-14.svg" alt="SVG"
+                                             data-parent="#SVGmockupBg">
+                                    </figure>
+                                    Servicio al cliente
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-medium" id="pills-two-tab" data-toggle="pill" href="#pills-two" role="tab" aria-controls="pills-two" aria-selected="false">
+                                <div class="d-md-flex justify-content-md-center align-items-md-center">
+                                    <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                                        <img class="js-svg-injector" src="../assets/svg/icons/icon-21.svg" alt="SVG"
+                                             data-parent="#SVGmockupBg">
+                                    </figure>
+                                    Calidad
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-medium" id="pills-three-tab" data-toggle="pill" href="#pills-three" role="tab" aria-controls="pills-three" aria-selected="false">
+                                <div class="d-md-flex justify-content-md-center align-items-md-center">
+                                    <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                                        <img class="js-svg-injector" src="../assets/svg/icons/icon-5.svg" alt="SVG"
+                                             data-parent="#SVGmockupBg">
+                                    </figure>
+                                    Rendimiento
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Nav Classic -->
+                <!-- Tab Content -->
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade pt-9 show active" id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab">
+                        <!-- Mockup Block -->
+                        <div class="row justify-content-lg-between align-items-lg-center">
+                            <div class="col-lg-4 mb-9 mb-lg-0">
+                                <!-- Info -->
+                                <div class="mb-5">
+                                    <h3 class="h4 font-weight-semi-bold">Creando clientes</h3>
+                                    <p>Trabajamos siempre pensando en satisfacer todas sus necesidades.</p>
+                                </div>
+                                <ul class="list-unstyled text-secondary font-size-1">
+                                    <li class="media my-3">
+                                        <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                                        <span class="media-body">
+                                            Ofrecer soluciones en software de calidad.
+                                        </span>
+                                    </li>
+                                    <li class="media my-3">
+                                        <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                                        <span class="media-body">
+                                            Brindar el mejor precio para nuestras soluciones.
+                                        </span>
+                                    </li>
+                                    <li class="media my-3">
+                                        <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                                        <span class="media-body">
+                                            Tenemos un excelente servicio y soporte técnico postventa.
+                                        </span>
+                                    </li>
+                                </ul>
+                                <!-- End Info -->
+                            </div>
+                            <div class="col-lg-7 position-relative">
+                                <div class="pl-md-9">
+                                    <img class="img-fluid shadow rounded" src="~/images/image1.png" alt="Image Description">
+                                </div>
+                                <!-- SVG Component -->
+                                <div class="position-absolute bottom-0 left-0 w-75 z-index-n1">
+                                    <figure class="ie-abstract-shapes-2">
+                                        <img class="js-svg-injector" src="../assets/svg/components/abstract-shapes-2.svg" alt="Image Description"
+                                             data-parent="#SVGmockupBg">
+                                    </figure>
+                                </div>
+                                <!-- End SVG Component -->
+                            </div>
+                        </div>
+                        <!-- End Mockup Block -->
+                    </div>
+                    <div class="tab-pane fade pt-9" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab">
+                        <!-- Mockup Block -->
+                        <div class="row justify-content-lg-between align-items-lg-center">
+                            <div class="col-lg-4 mb-9 mb-lg-0">
+                                <!-- Info -->
+                                <div class="mb-5">
+                                    <h3 class="h4 font-weight-semi-bold">Aplicando buenas prácticas</h3>
+                                    <p>Todas nuestras soluciones en software cumplen con altos estándares en calidad.</p>
+                                </div>
+                                <ul class="list-unstyled text-secondary font-size-1">
+                                    <li class="media my-3">
+                                        <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                                        <span class="media-body">
+                                            Utilizamos las tecnologías más recientes en el mercado.
+                                        </span>
+                                    </li>
+                                    <li class="media my-3">
+                                        <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                                        <span class="media-body">
+                                            Todas nuestras soluciones de software llevan un estricto control de calidad.
+                                        </span>
+                                    </li>
+                                    <li class="media my-3">
+                                        <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                                        <span class="media-body">
+                                            Todos nuestros colaboradores cuentan con muchos años de experiencia en desarrollo de software.
+                                        </span>
+                                    </li>
+                                </ul>
+                                <!-- End Info -->
+                            </div>
+                            <div class="col-lg-7 position-relative">
+                                <div class="pl-md-9">
+                                    <img class="img-fluid shadow-sm rounded" src="~/images/image2.png" alt="Image Description">
+                                </div>
+                                <!-- SVG Component -->
+                                <div class="position-absolute bottom-0 left-0 w-75 z-index-n1">
+                                    <figure class="ie-abstract-shapes-4">
+                                        <img class="js-svg-injector" src="../assets/svg/components/abstract-shapes-4.svg" alt="Image Description"
+                                             data-parent="#SVGmockupBg">
+                                    </figure>
+                                </div>
+                                <!-- End SVG Component -->
+                            </div>
+                        </div>
+                        <!-- End Mockup Block -->
+                    </div>
+                    <div class="tab-pane fade pt-9" id="pills-three" role="tabpanel" aria-labelledby="pills-three-tab">
+                        <!-- Mockup Block -->
+                        <div class="row justify-content-lg-between align-items-lg-center">
+                            <div class="col-lg-4 mb-9 mb-lg-0">
+                                <!-- Info -->
+                                <div class="mb-5">
+                                    <h3 class="h4 font-weight-semi-bold">Mejore su negocio con nuestras soluciones</h3>
+                                    <p>Incremente sus ganancias utilizando software que le ayude a ser más eficiente.</p>
+                                </div>
+                                <ul class="list-unstyled text-secondary font-size-1">
+                                    <li class="media my-3">
+                                        <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                                        <span class="media-body">
+                                            Reduzca los costos utilizando software diseñado a la medida.
+                                        </span>
+                                    </li>
+                                    <li class="media my-3">
+                                        <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                                        <span class="media-body">
+                                            Tenga mayor control y acceso de su negocio desde cualquier dispositivo utilizando nuestras aplicaciones web multiplataforma.
+                                        </span>
+                                    </li>
+                                </ul>
+                                <!-- End Info -->
+                            </div>
+                            <div class="col-lg-7 position-relative">
+                                <div class="pl-md-9">
+                                    <img class="img-fluid shadow-sm rounded" src="~/images/image3.jpg" alt="Image Description">
+                                </div>
+                                <!-- SVG Component -->
+                                <div class="position-absolute bottom-0 left-0 w-75 z-index-n1">
+                                    <figure class="ie-abstract-shapes-3">
+                                        <img class="js-svg-injector" src="../assets/svg/components/abstract-shapes-3.svg" alt="Image Description"
+                                             data-parent="#SVGmockupBg">
+                                    </figure>
+                                </div>
+                                <!-- End SVG Component -->
+                            </div>
+                        </div>
+                        <!-- End Mockup Block -->
+                    </div>
+                </div>
+                <!-- End Tab Content -->
+            </div>
+        </div>
+        <!-- End Features Section -->
+        <hr class="my-0">
+        <!-- Services Section -->
+        <div id="ourStorySection" class="container space-2 space-md-2">
+            <!-- Title -->
+            <div class="w-md-80 w-lg-75 text-center mx-md-auto mb-9">
+                <h2 class="h3 font-weight-semi-bold">Sobre WebTech</h2>
+                <small class="text-secondary font-weight-normal mb-2">
+                    En WebTech estamos comprometidos con brindar una experiencia sin igual a todos nuestros clientes,
+                    ofreciéndoles soluciones y productos de calidad y a un excelente precio.
+                    Con la experiencia y conocimiento de todos los integrantes de WebTech hemos logrado desarrollar aplicaciones web,
+                    tales como nuestro producto estrella <span class="font-weight-semi-bold">Flay</span>,
+                    el cual esta especializado en el manejo de aeropuertos y sus operaciones a nivel mundial.
+                </small>
+            </div>
+            <!-- End Title -->
+            <div class="card-deck card-sm-gutters-3 d-block d-md-flex">
+                <!-- Card -->
+                <div class="card text-center mb-4 mb-md-0">
+                    <div class="card-body space-3 px-5">
+                        <div class="mb-4">
+                            <figure id="icon24" class="svg-preloader ie-height-72 w-100 max-width-10 mx-auto mb-3">
+                                <img class="js-svg-injector" src="../assets/svg/icons/icon-24.svg" alt="SVG"
+                                     data-parent="#icon24">
+                            </figure>
+                            <h3 class="h4">Misión</h3>
+                            <p>
+                                Ofrecer soluciones web que impulsen los negocios de nuestros clientes al
+                                incrementar su productividad a través del uso de plataformas amigables y
+                                al mismo tiempo proveer una gran satisfacción a sus usuarios.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Card -->
+                <!-- Card -->
+                <div id="SVGcardSection" class="svg-preloader card z-index-2 text-center">
+                    <div class="card-body space-3 px-5">
+                        <div class="mb-4">
+                            <figure id="icon23" class="svg-preloader ie-height-72 w-100 max-width-10 mx-auto mb-3">
+                                <img class="js-svg-injector" src="../assets/svg/icons/icon-23.svg" alt="SVG"
+                                     data-parent="#icon23">
+                            </figure>
+                            <h3 class="h4">Visión</h3>
+                            <p>
+                                Ser la empresa líder más confiable en el desarrollo de aplicaciones web que
+                                ofrecen servicios integrales basados en las necesidades del cliente.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- SVG Component -->
+                    <div class="position-absolute top-0 left-0 w-100 max-width-15 z-index-n1">
+                        <figure class="ie-abstract-shapes-9">
+                            <img class="js-svg-injector" src="../assets/svg/components/abstract-shapes-9.svg" alt="Image Description"
+                                 data-parent="#SVGcardSection">
+                        </figure>
+                    </div>
+                    <!-- End SVG Component -->
+                    <!-- SVG Component -->
+                    <div class="position-absolute bottom-0 right-0 w-100 max-width-15 z-index-n1">
+                        <figure class="ie-abstract-shapes-6">
+                            <img class="js-svg-injector" src="../assets/svg/components/abstract-shapes-6.svg" alt="Image Description"
+                                 data-parent="#SVGcardSection">
+                        </figure>
+                    </div>
+                    <!-- End SVG Component -->
+                </div>
+                <!-- End Card -->
+                <!-- Card -->
+                <div class="card text-center mb-4 mb-md-0">
+                    <div class="card-body space-3 px-5">
+                        <div class="mb-4">
+                            <figure id="icon25" class="svg-preloader ie-height-72 w-100 max-width-10 mx-auto mb-3">
+                                <img class="js-svg-injector" src="../assets/svg/icons/icon-25.svg" alt="SVG"
+                                     data-parent="#icon25">
+                            </figure>
+                            <h3 class="h4">Valores</h3>
+                            <ul>
+                                <li>
+                                    <p>
+                                        Colaboración: potenciar el talento colectivo.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Rendir cuentas: ser responsables de nuestras tareas y acciones.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Pasión: estar comprometidos con el corazón y con la mente.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Calidad: búsqueda de la excelencia.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Card -->
+            </div>
+        </div>
+        <!-- End Services Section -->
+        <!-- CTA Section -->
+        <div id="servicesSection" class="svg-preloader position-relative gradient-half-primary-v1 text-center z-index-2 overflow-hidden">
+            <div class="container space-2">
+                <h3 class="h2 text-info font-weight-semi-bold mb-3">Nuestro recurso humano</h3>
+                <p class="lead text-white mb-5">
+                    <span class="font-weight-semi-bold">WebTech</span> no existiría si no fuera por nuestros integrantes.
+                </p>
+            </div>
+            <div class="row justify-content-sm-center">
+                <div class="col-lg-9 order-lg-2 mb-9 mb-lg-0">
+                    <div class="card-deck d-block d-md-flex card-md-gutters-2">
+                        <!-- Blog Grid -->
+                        <article class="card border-0 shadow-sm mb-3">
+                            <div class="card-body p-5">
+                                <div class="u-sm-avatar--bordered mr-3 mb-1">
+                                    <img class="img-fluid rounded-circle" src="~/images/jose.png" alt="Image Description">
+                                </div>
+                                <h2 class="h5">
+                                    Jose Leiva Pomares
+                                </h2>
+                                <p class="mb-4">Correo: jleivap@ucenfotec.ac.cr</p>
+                                <p class="mb-0">Teléfono:  8819-1246</p>
+                            </div>
+                            <div class="card-footer pb-5 px-0 mx-5">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <h4 class="small mb-0">Coordinador</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- End Blog Grid -->
+                        <!-- Blog Grid -->
+                        <article class="card border-0 shadow-sm mb-3">
+                            <div class="card-body p-5">
+                                <div class="u-sm-avatar--bordered mr-3 mb-1">
+                                    <img class="img-fluid rounded-circle" src="~/images/yanori.png" alt="Image Description">
+                                </div>
+                                <h2 class="h5">
+                                    Yanory Morera Ramírez
+                                </h2>
+                                <p class="mb-4">Correo: ymorerar@ucenfotec.ac.cr</p>
+                                <p class="mb-0">Teléfono:  8652-5547</p>
+                            </div>
+                            <div class="card-footer pb-5 px-0 mx-5">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <h4 class="small mb-0">Soporte 1</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- End Blog Grid -->
+                        <!-- Blog Grid -->
+                        <article class="card border-0 shadow-sm mb-3">
+                            <div class="card-body p-5">
+                                <div class="u-sm-avatar--bordered mr-3 mb-1">
+                                    <img class="img-fluid rounded-circle" src="~/images/david.png" alt="Image Description">
+                                </div>
+                                <h2 class="h5">
+                                    David Serrano Gutierrez
+                                </h2>
+                                <p class="mb-4">Correo: dserranog@ucenfotec.ac.cr</p>
+                                <p class="mb-0">Teléfono:  8352-9969</p>
+                            </div>
+                            <div class="card-footer pb-5 px-0 mx-5">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <h4 class="small mb-0">Soporte 2 </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- End Blog Grid -->
+                    </div>
+                    <div class="card-deck d-block d-md-flex card-md-gutters-2">
+                        <!-- Blog Grid -->
+                        <article class="card border-0 shadow-sm mb-3">
+                            <div class="card-body p-5">
+                                <div class="u-sm-avatar--bordered mr-3 mb-1">
+                                    <img class="img-fluid rounded-circle" src="~/images/silvia.png" alt="Image Description">
+                                </div>
+                                <h2 class="h5">
+                                    Silvia Bolaños Prada
+                                </h2>
+                                <p class="mb-4">Correo: sbolanosp@ucenfotec.ac.cr</p>
+                                <p class="mb-0">Teléfono:  8814-0096</p>
+                            </div>
+                            <div class="card-footer pb-5 px-0 mx-5">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <h4 class="small mb-0">Desarrollo</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- End Blog Grid -->
+                        <!-- Blog Grid -->
+                        <article class="card border-0 shadow-sm mb-3">
+                            <div class="card-body p-5">
+                                <div class="u-sm-avatar--bordered mr-3 mb-1">
+                                    <img class="img-fluid rounded-circle" src="~/images/fabio.png" alt="Image Description">
+                                </div>
+                                <h2 class="h5">
+                                    Fabio Estrada Odio
+                                </h2>
+                                <p class="mb-4">Correo: festradao@ucenfotec.ac.cr</p>
+                                <p class="mb-0">Teléfono:  8316-1355</p>
+                            </div>
+                            <div class="card-footer pb-5 px-0 mx-5">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <h4 class="small mb-0">Calidad</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- End Blog Grid -->
+                        <!-- Blog Grid -->
+                        <article class="card border-0 shadow-sm mb-3">
+                            <div class="card-body p-5">
+                                <div class="u-sm-avatar--bordered mr-3 mb-1">
+                                    <img class="img-fluid rounded-circle" src="~/images/manuel.png" alt="Image Description">
+                                </div>
+                                <h2 class="h5">
+                                    Manuel Alvarado Solano
+                                </h2>
+                                <p class="mb-4">Correo: malvarados1@ucenfotec.ac.cr</p>
+                                <p class="mb-0">Teléfono:  8885-5136</p>
+                            </div>
+                            <div class="card-footer pb-5 px-0 mx-5">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <h4 class="small mb-0">Calidad 2</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- End Blog Grid -->
+                    </div>
+                    <div class="space-bottom-2"></div>
+                </div>
+            </div>
+
+            <!-- SVG Component -->
+            <figure class="position-absolute top-0 left-0 w-100 max-width-27 z-index-n1">
+                <img class="js-svg-injector" src="../assets/svg/components/abstract-shapes-8.svg" alt="Image Description"
+                     data-parent="#servicesSection">
+            </figure>
+            <!-- End SVG Component -->
+            <!-- SVG Component -->
+            <figure class="position-absolute bottom-0 right-0 w-100 max-width-27 z-index-n1">
+                <img class="js-svg-injector" src="../assets/svg/components/abstract-shapes-5.svg" alt="Image Description"
+                     data-parent="#servicesSection">
+            </figure>
+            <!-- End SVG Component -->
+        </div>
+        <!-- End CTA Section -->
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+    <!-- Go to Top -->
+    <a class="js-go-to u-go-to" href="#"
+       data-position='{"bottom": 15, "right": 15 }'
+       data-type="fixed"
+       data-offset-top="400"
+       data-compensation="#header"
+       data-show-effect="slideInUp"
+       data-hide-effect="slideOutDown">
+        <span class="fas fa-arrow-up u-go-to__inner"></span>
+    </a>
+    <!-- End Go to Top -->
+    <!-- JS Global Compulsory -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-migrate.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- JS Implementing Plugins -->
+    <script src="~/Scripts/hs.megamenu.js"></script>
+    <script src="~/Scripts/svg-injector.min.js"></script>
+    <script src="~/Scripts/appear.js"></script>
+    <script src="~/Scripts/jquery.fancybox.min.js"></script>
+    <script src="~/Scripts/dzsparallaxer.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <!-- JS Front -->
+    <script src="~/Scripts/hs.core.js"></script>
+    <script src="~/Scripts/hs.header.js"></script>
+    <script src="~/Scripts/hs.scroll-nav.js"></script>
+    <script src="~/Scripts/hs.svg-injector.js"></script>
+    <script src="~/Scripts/hs.fancybox.js"></script>
+    <script src="~/Scripts/hs.validation.js"></script>
+    <script src="~/Scripts/hs.go-to.js"></script>
+    <!-- JS Plugins Init. -->
+    <script>
+        $(window).on('load', function () {
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 767.98,
+                hideTimeOut: 0
+            });
+
+            // initialization of svg injector module
+            $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+
+            // initialization of HSScrollNav component
+            $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
+                duration: 700
+            });
+        });
+
+        $(document).on('ready', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#header'));
+
+            // initialization of fancybox
+            $.HSCore.components.HSFancyBox.init('.js-fancybox');
+
+            // initialization of form validation
+            $.HSCore.components.HSValidation.init('.js-validate');
+
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿<script src="~/Scripts/Views/Cuenta/Autenticar.js"></script>
+
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    ViewBag.Title = "Ingresar";
+}
+
+<div class="container">
+    <div class="row no-gutters">
+        <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-3 space-lg-0">
+            <!-- Form -->
+            <form class="js-validate mt-5">
+                <!-- Title -->
+                <div class="mb-7">
+                    <h2 class="h3 text-primary font-weight-normal mb-0">¡Bienvenido!</h2>
+                    <p>Ingrese para administrar su cuenta.</p>
+                </div>
+                <!-- End Title -->
+                <div class="loader"></div>
+                <div class="alert alert-warning alert-dismissible fade show d-none js-login-message" id="alert_container" role="alert">
+                    <span id="alert_message"></span>
+                </div>
+
+                <!-- Form Group -->
+                <div class="js-form-message form-group">
+                    <label class="form-label" for="signinSrEmail">Correo electrónico <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" name="email" id="signinSrEmail" placeholder="usuario@mail.com" aria-label="Correo electrónico" required
+                           data-msg="Digite un correo electrónico válido"
+                           data-error-class="u-has-error"
+                           data-success-class="u-has-success">
+                </div>
+                <!-- End Form Group -->
+                <!-- Form Group -->
+                <div class="js-form-message form-group">
+                    <label class="form-label" for="signinSrPassword">
+                        Contraseña <span class="text-danger">*</span>
+
+                    </label>
+
+                    <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
+                           data-msg="Por favor ingrese un valor válido."
+                           data-error-class="u-has-error"
+                           data-success-class="u-has-success">
+                    <span class="d-flex align-items-center form-label mt-1">
+                        <a class="link-muted text-capitalize font-weight-normal" href="@Url.Action("/RecuperarContrasena")">¿Olvidó su contraseña?</a>
+                    </span>
+                </div>
+                <!-- End Form Group -->
+                <!-- Button -->
+                <div class="row align-items-center mb-5">
+                    <div class="col-6">
+                        <span class="small text-muted">¿No tiene una cuenta?</span>
+                        <a class="small" href="@Url.Action("/RegistrarCuenta")">Regístrese</a>
+                    </div>
+
+                    <div class="col-6 text-right">
+                        <button type="submit" class="btn btn-primary transition-3d-hover" id="btnLogin">Ingresar</button>
+                    </div>
+                </div>
+                <!-- End Button -->
+            </form>
+            <!-- End Form -->
+        </div>
+    </div>
+</div>
+
+

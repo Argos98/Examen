@@ -1,0 +1,45 @@
+﻿@using WebApp.Helpers
+<script src="~/Scripts/Views/Aeropuerto/ListarParaAdminAerolinea.js"></script>
+@{
+    ViewBag.Title = "Aeropuertos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="bg-light ">
+    <div class="container space-1">
+        <h1 class="h3 text-primary"><span class="font-weight-semi-bold">Lista de aeropuertos</span></h1>
+        <div class="row align-items-center">
+            <div class="mb-1">
+                <!-- Categories Nav -->
+
+                <ul class="nav nav-classic nav-shadow bg-white">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Gestionar Aeropuertos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <a class="dropdown-item" href="#">Listar aeropuertos</a>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container space-1 space-bottom-md-3">
+    @Html.CtrlTable(viewName: "Aeropuertos", id: "tblAeropuertos", title: "Lista de aeropuertos registrados",
+    columnsTitle: "Código aeropuerto,Nombre,Código país,País,Código ciudad,Ciudad,Dirección,Latitud,Longitud,Vuelos por hora,Porcentaje de comisión por boleto,Porcentaje de impuesto de ventas,Comisión por uso de una puerta,Comisión por uso de un parqueo,Comisión por uso de una pista,Zona horaria,Moneda,Estado,Acciones", ColumnsDataName: "CodigoAeropuerto,Nombre,CodigoPais,NombrePais,CodigoCiudad,NombreCiudad,Direccion,Latitud,Longitud,VuelosHora,PorcentajeComisionBoletos,PorcentajeImpuestoVentas,ComisionUsoPuerta,ComisionUsoParqueo,ComisionUsoPista,ZonaHoraria,Moneda,Estado", onSelectFunction: "BindFields")
+    <!-- Button -->
+    <div class="row align-items-center mt-3">
+        <div class="col-12 col-sm-12 text-right">
+            <button type="button" class="btn btn-secondary transition-3d-hover" id="btn-regresar">Regresar</button>
+        </div>
+    </div>
+    <!-- End Button -->
+</div>
+
+

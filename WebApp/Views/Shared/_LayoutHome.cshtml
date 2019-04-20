@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - Flay</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="~/favicon.ico">
+    <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/theme.min.css">
+    <link rel="stylesheet" href="~/Content/hs.megamenu.css">
+    <link rel="stylesheet" href="~/Content/fontawesome-all.min.css">
+    <link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/custombox.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <script>
+        var page = {
+            type: 'publico'
+        };
+        sessionStorage.setItem('flay', JSON.stringify(page));
+    </script>
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-migrate.min.js"></script>
+
+    <script src="~/Scripts/Views/Cuenta/Sesion.js"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+    @Scripts.Render("~/bundles/dependencies")
+    @Scripts.Render("~/bundles/common")
+
+</head>
+<body class="gradient-half-primary-body-v1 mb-lg-0">
+    <header id="header" class="u-header u-header--bg-transparent u-header--abs-top">
+        <div class="u-header__section">
+            <div id="logoAndNav" class="container">
+                <!-- Nav -->
+                <nav class="navbar navbar-expand u-header__navbar">
+                    <!-- Logo -->
+                    <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-text-white" href="../home/index.html" aria-label="Front">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="46px" height="46px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
+                        <path fill="#E1E4EA" opacity=".65" d="M23,41.1L23,41.1c-9.9,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6v11.4C41,33,32.9,41.1,23,41.1z"></path>
+                        <path class="fill-white" opacity=".5" d="M28,36L28,36c-9.9,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3C43,0.1,46,3.1,46,6.7v11.4C46,28,38,36,28,36z"></path>
+                        <path class="fill-white" opacity=".7" d="M18,46.1L18,46.1c-10,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6v11.4C35.9,38.1,27.9,46.1,18,46.1z"></path>
+                        <path class="fill-primary" d="M17.4,34.1V18.4h10.2v2.9h-6.4v3.4H26v2.9h-4.8v6.5H17.4z"></path>
+            </svg>
+                        <span class="u-header__navbar-brand-text">Flay</span>
+                    </a>
+                    <!-- End Logo -->
+                    <!-- Button -->
+                    <div class="ml-auto">
+                        <ul class="list-inline">
+                            <li class="list-inline-item js-link-login">
+                                <a class="btn btn-primary btn-sm text-white" href="@Url.Action("RegistrarCuenta", "Cuenta")">
+                                    Crear cuenta
+                                </a>
+                            </li>
+                            <li class="list-inline-item js-link-login">
+                                <a class="btn btn-link btn-sm text-white" href="@Url.Action("InicioSesion", "Cuenta")">
+                                    Ingresar
+                                </a>
+                            </li>
+                            <li class="list-inline-item d-none js-account-wrap">
+                                <!-- Account Sidebar Toggle Button -->
+                                <a id="sidebarNavToggler" class="btn btn-xs btn-text-secondary u-sidebar--account__toggle-bg ml-1 bg-light" href="@Url.Action("Index", "Dashboard")">
+                                    <span class="position-relative">
+                                        <span class="u-sidebar--account__toggle-text ">Hola, <b class="js-account-name"></b></span>
+                                        <img class="u-sidebar--account__toggle-img" src="../../assets/img/160x160/default-user.png" alt="Image Description">
+                                    </span>
+                                </a>
+                                <!-- End Account Sidebar Toggle Button -->
+                            </li>
+                        </ul>
+
+
+                    </div>
+                    <!-- End Button -->
+                </nav>
+                <!-- End Nav -->
+            </div>
+        </div>
+    </header>
+
+    <main id="content" role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="u-sticky-footer">
+        <div class="container space-bottom-1">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                    <!-- Copyright -->
+                    <p class="small text-white-70 mb-0">© Flay. 2019 Todo los derechos reservados.</p>
+                    <!-- End Copyright -->
+                </div> 
+                <!-- Power by -->
+                <div class="col-sm-3 mb-3 mb-sm-0 text-sm-right">
+                    <a href="@Url.Action("index","Flay")"><p class="small text-white-70 mb-0">Power by WebTech</p></a>
+                </div>
+                <!-- End Power by -->
+                <div class="col-sm-5 text-sm-right">
+                    <!-- Social Networks -->
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a class="btn btn-sm btn-icon btn-soft-light btn-bg-transparent" href="#">
+                                <span class="fab fa-facebook-f btn-icon__inner"></span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-sm btn-icon btn-soft-light btn-bg-transparent" href="#">
+                                <span class="fab fa-google btn-icon__inner"></span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-sm btn-icon btn-soft-light btn-bg-transparent" href="#">
+                                <span class="fab fa-twitter btn-icon__inner"></span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-sm btn-icon btn-soft-light btn-bg-transparent" href="#">
+                                <span class="fab fa-github btn-icon__inner"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- End Social Networks -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        $(window).on('load', function () {
+            // initialization of svg injector module
+            $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+        });
+
+        $(document).on('ready', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#header'));
+
+            // initialization of malihu scrollbar
+            $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+            // initialization of forms
+            $.HSCore.components.HSFocusState.init();
+
+            // initialization of show animations
+            $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+
+            // initialization of unfold component
+            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
+        });
+    </script>
+</body>
+</html>

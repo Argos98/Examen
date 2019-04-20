@@ -1,0 +1,29 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Negocio/Listar.js"></script>
+@{
+    ViewBag.Title = "Negocios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Negocios"})
+
+<div class="container space-1">
+    <div class="row justify-content-end">
+        <a class="btn btn-primary" href='@Url.Action("Registrar", "negocio")'>Registrar negocio</a>
+    </div>
+</div>
+
+<div class="container space-1 space-bottom-md-3">
+    @Html.CtrlTable(viewName: "Negocios", id: "tblNegocios", title: "Negocios registrados",
+    columnsTitle: "IdNegocio,Nombre comercial,Cédula jurídica,Tipo de negocio,Id del local comercial,Estado,Acciones", ColumnsDataName: "IdNegocio,NombreComercial,CedulaJuridica,TipoNegocio,IdLocalComercial,Estado", onSelectFunction: "BindFields")
+    <!-- Button -->
+    <div class="row align-items-center mt-3">
+        <div class="col-12 col-sm-12 text-right">
+            <a class="btn btn-secondary transition-3d-hover" href='@Url.Action("Detalle","Aeropuerto")' role="button">Regresar</a>
+        </div>
+    </div>
+    <!-- End Button -->
+</div>
+
+
+

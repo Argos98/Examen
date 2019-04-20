@@ -1,0 +1,72 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Aerolinea/RegistrarParaAdminAerolinea.js"></script>
+@{
+    ViewBag.Title = "Registrar aerolínea";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container space-1 space-bottom-md-3 shadow-sm p-7 mt-5">
+    <!-- Form -->
+    <form class="js-validate" id="frmEdition">
+        <!-- Title -->
+        <div class="mb-7">
+            <h1 class="h3 text-primary font-weight-normal mb-0">Registro de aerolínea</h1>
+        </div>
+        <!-- End Title -->
+        <!-- mensajes del webapi y div del loading-->
+        <div class="loader"></div>
+        <div class="alert alert-warning alert-dismissible fade show d-none js-login-message" id="alert_container" role="alert">
+            <span id="alert_message"></span>
+        </div>
+        <p>Campos requeridos <span class="text-danger">*</span></p>
+        <!-- Fin mensajes del webapi y div del loading-->
+        <div class="row">
+            <div class="col-sm-6 mb-6" id="Aeropuerto">
+                @Html.CtrlDropDown(id: "CodigoAeropuerto", label: "Aeropuerto", required: true, mensajeValidacion: "Por favor seleccione un aeropuerto.", service: "Aeropuerto/GetAeropuertosDropDown")
+            </div>
+            <div class="col-sm-6 mb-6" id="Usuario">
+                @Html.CtrlDropDown(id: "IdUsuario", label: "Administrador aerolínea", required: true, mensajeValidacion: "Por favor seleccione un administrador de aerolínea.", service: "Usuario/GetAdminstradorAerolineaSinAerolineaDropDown")
+            </div>
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "CedulaJuridica", type: "text", label: "Cédula jurídica", placeHolder: "Cédula jurídica", required: true, mensajeValidacion: "Por favor ingrese la cédula jurídica.")
+            </div>
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "RazonSocial", type: "text", label: "Razón social", placeHolder: "Razón social", required: true, mensajeValidacion: "Por favor ingrese la razón social.")
+            </div>
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "NombreComercial", type: "text", label: "Nombre comercial", placeHolder: "Nombre comercial", required: true, mensajeValidacion: "Por favor ingrese el nombre comercial.")
+            </div>
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "AnoFundacion", type: "number", label: "Año de fundación", placeHolder: "Año de fundación", required: true, mensajeValidacion: "Por favor ingrese el año de fundación.")
+            </div>
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "SitioWeb", type: "url", label: "Sitio Web", placeHolder: "Sitio Web", required: true, mensajeValidacion: "Por favor ingrese una dirección de página web.")
+            </div>
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlTextArea(id: "Descripcion", label: "Descripción", placeHolder: "Descripcion de la aerolínea", required: true, mensajeValidacion: "Por favor ingrese una descripción para la aerolínea.")
+            </div>
+            <div class="col-sm-6 mb-6">
+            </div>
+        </div>
+        <!-- Button -->
+        <div class="row align-items-center mb-5">
+            <div class="col-12 col-sm-12 text-right">
+                <button type="button" class="btn btn-primary transition-3d-hover" id="btn-submit">Registrar</button>
+                <button type="reset" class="btn btn-secondary transition-3d-hover">Limpiar</button>
+                <button type="button" class="btn btn-secondary transition-3d-hover" id="btn-regresar">Regresar</button>
+                <!--<a class="btn btn-secondary transition-3d-hover" href="Listar" role="button">Regresar</a>-->
+            </div>
+        </div>
+        <!-- End Button -->
+    </form>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.HSCore.components.HSValidation.init('.js-validate');
+    });
+</script>
+
+
+
+

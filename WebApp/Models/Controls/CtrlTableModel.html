@@ -1,0 +1,33 @@
+﻿<script>
+    $(document).ready(function () {
+        var table = $('#-#Id-').DataTable();
+        $('#-#Id- tbody').on('click', '.js-btn-detalle', function () {
+            var data = table.row($(this).parents('tr')).data();
+            
+            sessionStorage.setItem('-#Id-_selected', JSON.stringify(data));
+            location.href = 'Detalle';
+        });
+
+        $('#-#Id- tbody').on('click', '.js-btn-editar', function () {
+            var data = table.row($(this).parents('tr')).data();
+
+            sessionStorage.setItem('-#Id-_selected', JSON.stringify(data));
+            location.href = 'Editar';
+        });
+    });
+</script>
+
+<div class="card">
+    <div class="card-header">-#Title-</div>
+    <div class="card-body">
+        <table id="-#Id-" class="table table-light" cellspacing="0" width="100%"
+               ColumnsDataName="-#ColumnsDataName-">
+            <thead>
+                <tr>
+                    -#ColumnHeaders-
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>

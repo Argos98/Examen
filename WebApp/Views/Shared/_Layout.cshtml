@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - Flay</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="~/favicon.ico">
+    <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/theme.min.css">
+    <link rel="stylesheet" href="~/Content/hs.megamenu.css">
+    <link rel="stylesheet" href="~/Content/fontawesome-all.min.css">
+    <link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/custombox.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/Site.css">
+
+    <script>
+        var page = {
+            type: 'privado'
+        };
+        sessionStorage.setItem('flay', JSON.stringify(page));
+    </script>
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-migrate.min.js"></script>
+
+    <script src="~/Scripts/Views/Cuenta/Sesion.js"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/sweetalert2.all.min.js"></script>
+
+    @Scripts.Render("~/bundles/dependencies")
+    @Scripts.Render("~/bundles/common")
+
+</head>
+<body>
+    @RenderPage("_Header.cshtml")
+
+    <main id="content" role="main">
+        @RenderBody()
+
+        <div class="bg-img-hero" style="background-image: url(../../assets/img/bg-shapes/bg3.png);">
+            <div class="container space-1 space-md-3"></div>
+        </div>
+    </main>
+
+    @RenderPage("_Footer.cshtml")
+
+    <script>
+        $(window).on('load', function () {
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 767.98,
+                hideTimeOut: 0
+            });
+
+            // initialization of HSMegaMenu component
+            $('.js-breadcrumb-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 991.98,
+                hideTimeOut: 0
+            });
+
+            // initialization of svg injector module
+            $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+        });
+
+        $(document).on('ready', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#header'));
+
+            // initialization of malihu scrollbar
+            $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+            // initialization of forms
+            $.HSCore.components.HSFocusState.init();
+
+            // initialization of show animations
+            $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+
+            // initialization of unfold component
+            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
+        });
+    </script>
+</body>
+</html>

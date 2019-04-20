@@ -1,0 +1,50 @@
+﻿@using WebApp.Helpers;
+@{
+    ViewBag.Title = "CambiarContrasena";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<div class="container space-1 space-bottom-md-1">
+    <form class="js-validate" id="frmEdition">
+        <div class="loader"></div>
+        <div class="alert alert-warning alert-dismissible fade show d-none js-login-message" id="alert_container" role="alert">
+            <span id="alert_message"></span>
+        </div>
+
+        <p class="text-muted">
+            Los campos marcados con un asterisco (*) son requeridos.
+        </p>
+        <div class="row">
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "Contrasena", type: "password", label: "Contraseña actual",
+              placeHolder: "", required: true,
+              mensajeValidacion: "Por favor ingrese un valor válido.")
+            </div>
+
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "Contrasena", type: "password", label: "Nueva contraseña",
+              placeHolder: "", required: true,
+              mensajeValidacion: "Por favor ingrese un valor válido.")
+            </div>
+
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "Contrasena", type: "password", label: "Confirmar contraseña",
+              placeHolder: "", required: true,
+              mensajeValidacion: "Por favor ingrese un valor válido.")
+            </div>
+
+
+            <div class="col-12">
+                <button type="button" class="btn btn-primary transition-3d-hover" id="btn-submit">Guardar</button>
+                <button type="reset" class="btn btn-secondary transition-3d-hover" id="btn-cancel">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.HSCore.components.HSValidation.init('.js-validate');
+    });
+</script>
+

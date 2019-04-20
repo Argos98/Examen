@@ -1,0 +1,128 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Aeropuerto/Registrar.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAFEGvdjrsYZKxATWfFydBizVApTh11dnM&callback=initMap" async defer></script>
+
+@{
+    ViewBag.Title = "Registrar aeropuerto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Registrar aeropuerto" })
+
+<div class="container space-1 space-bottom-md-3">
+
+        <div class="col-md-12 shadow-sm mt-5">
+            <!-- Form -->
+            <form class="js-validate mt-5" id="frmEdition">
+                <!-- Title -->
+                <div class="mb-7">
+                    <h1 class="h3 text-primary font-weight-normal mb-0">Registro de aeropuerto</h1>
+                </div>
+                <!-- End Title -->
+                <!-- mensajes del webapi y div del loading-->
+                <div class="loader"></div>
+                <div class="alert alert-warning alert-dismissible fade show d-none js-login-message" id="alert_container" role="alert">
+                    <span id="alert_message"></span>
+                </div>
+                <p>Campos requeridos <span class="text-danger">*</span></p>
+                <!-- Fin mensajes del webapi y div del loading-->
+                <div class="row">
+
+                    <div class="col-sm-6 mb-6">
+                        @Html.CtrlInput(id: "CodigoAeropuerto", type: "text", label: "Código del aeropuerto", placeHolder: "Código del aeropuerto", required: true, mensajeValidacion: "Por favor ingrese el código del aeropuerto.")
+
+                    </div>
+
+                    <div class="col-sm-6 mb-6">
+                        @Html.CtrlInput(id: "Nombre", type: "text", label: "Nombre", placeHolder: "Nombre", required: true, mensajeValidacion: "Por favor ingrese el nombre.")
+                    </div>
+
+                    <div class="col-sm-6 mb-6">
+                        @Html.CtrlDropDown(id: "CodigoPais", label: "País", required: true, mensajeValidacion: "Por favor seleccione un país.")
+                    </div>
+
+                    <div class="col-sm-6 mb-6">
+                        <!-- Input -->
+                        <div class="form-group js-form-message">
+                            <label for="CodigoCiudad">Ciudad</label> <span class="text-danger">*</span>
+                            <div class="form-group">
+                                <select class="custom-select form-control js-form-filter-control" name="CodigoCiudad" id="CodigoCiudad" required
+                                        data-msg="Por favor seleccione una ciudad."
+                                        data-error-class="u-has-error"
+                                        data-success-class="u-has-success"></select>
+                            </div>
+                        </div>
+                        <!-- End Input -->
+                    </div>
+
+
+
+                    <div class="col-sm-6 mb-6">
+                        @Html.CtrlInput(id: "VuelosHora", type: "number", label: "Vuelos por hora", placeHolder: "Vuelos por hora", required: true, mensajeValidacion: "Por favor ingrese los vuelos por hora.")
+                    </div>
+
+                    <div class="col-sm-6 mb-6">
+                        @Html.CtrlInput(id: "PorcentajeComisionBoletos", type: "number", label: "Porcentaje de comisión de boletos", placeHolder: "Porcentaje de comisión de boletos", required: true, mensajeValidacion: "Por favor ingrese el porcentaje de comisión de boletos.")
+                    </div>
+
+                    <div class="col-sm-6 mb-6">
+                        @Html.CtrlInput(id: "PorcentajeImpuestoVentas", type: "number", label: "Porcentaje de impuesto de ventas", placeHolder: "Porcentaje de impuesto de ventas", required: true, mensajeValidacion: "Por favor ingrese el porcentaje de impuesto de ventas.")
+                    </div>
+
+                    <div class="col-sm-6 mb-6">
+                        @Html.CtrlInput(id: "ComisionUsoPuerta", type: "number", label: "Comisión por uso de una puerta", placeHolder: "Comisión por uso de una puerta", required: true, mensajeValidacion: "Por favor ingrese la comisión por uso de una puerta.")
+                    </div>
+
+                    <div class="col-sm-6 mb-6">
+                        @Html.CtrlInput(id: "ComisionUsoParqueo", type: "number", label: "Comisión por uso de un parqueo", placeHolder: "Comisión por uso de un parqueo", required: true, mensajeValidacion: "Por favor ingrese la comisión por uso de un parqueo.")
+                    </div>
+
+                    <div class="col-sm-6 mb-6">
+                        @Html.CtrlInput(id: "ComisionUsoPista", type: "number", label: "Comisión por uso de una pista", placeHolder: "Comisión por uso de una pista", required: true, mensajeValidacion: "Por favor ingrese la comisión por uso de una pista.")
+                    </div>
+
+                    <div class="col-sm-6 mb-6">
+                        @Html.CtrlInput(id: "ZonaHoraria", type: "number", label: "Zona horaria", placeHolder: "Zona horaria", required: true, mensajeValidacion: "Por favor ingrese la zona horaria.")
+
+                    </div>
+
+                    <div class="col-sm-6 mb-6">
+                        @Html.CtrlInput(id: "Moneda", type: "text", label: "Moneda", placeHolder: "Moneda", required: true, mensajeValidacion: "Por favor ingrese la moneda.")
+
+                    </div>
+
+                    <div class="col-sm-12 mb-6">
+                        @Html.CtrlTextArea(id: "Direccion", label: "Dirección", placeHolder: "Dirección", required: true, mensajeValidacion: "Por favor ingrese la dirección.")
+                    </div>
+
+
+                    <div class="col-sm-12 mb-6">
+                        <div class="card-header" id="dvMap" style="height:500px;"> </div>
+                    </div>
+
+                    @*No se ven, se van a quitar luego de la primera iteracion.*@
+                    @Html.CtrlInput(id: "Latitud", type: "number", label: "", placeHolder: "", required: false, mensajeValidacion: "Por favor ingrese la latitud.")
+
+                    @Html.CtrlInput(id: "Longitud", type: "number", label: "", placeHolder: "", required: false, mensajeValidacion: "Por favor ingrese la longitud.")
+
+                </div>
+                <!-- Button -->
+                <div class="row align-items-center mb-5">
+                    <div class="col-12 col-sm-12 mb-5 text-right">
+                        <button type="button" class="btn btn-primary transition-3d-hover" id="btn-submit">Registrar</button>
+                        <button type="reset" class="btn btn-secondary transition-3d-hover">Limpiar</button>
+                        <a class="btn btn-secondary transition-3d-hover" href="Listar" role="button">Regresar</a>
+                    </div>
+                </div>
+                <!-- End Button -->
+            </form>
+            <!-- End Form -->
+        </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $.HSCore.components.HSValidation.init('.js-validate');
+        });
+    </script>
+</div>

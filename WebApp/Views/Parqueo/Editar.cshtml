@@ -1,0 +1,59 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Parqueo/Editar.js"></script>
+@{
+    ViewBag.Title = "Editar parqueo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Editar parqueo" })
+
+<div class="container space-bottom-md-2">
+    <div class="row no-gutters">
+        <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-lg-0 shadow-sm p-7 mt-5">
+            <!-- Form -->
+            <form class="js-validate mt-5" id="frmEdition">
+                <!-- Title -->
+                <div class="mb-7">
+                    <h1 class="h3 text-primary font-weight-normal mb-0">Editar parqueo</h1>
+                </div>
+                <!-- End Title -->
+                <!-- mensajes del webapi y div del loading-->
+                <div class="loader"></div>
+                <div class="alert alert-warning alert-dismissible fade show d-none js-login-message" id="alert_container" role="alert">
+                    <span id="alert_message"></span>
+                </div>
+                <p>Campos requeridos <span class="text-danger">*</span></p>
+                @Html.CtrlInput(id: "CodigoParqueo", type: "text", label: "Código de parqueo", placeHolder: "Código parqueo", required: true, mensajeValidacion: "Por favor ingrese el código del parqueo.")
+
+
+                <div class="form-group">
+                    <label>Estado del parqueo</label>
+                    <select class="custom-select form-control js-form-filter-control" name="Estado" id="Estado" placeHolder="Por favor seleccione un estado"
+                            data-error-class="u-has-error"
+                            data-success-class="u-has-success">
+                        <option value="true">Habilitado</option>
+                        <option value="false">Deshabilitada</option>
+                    </select>
+                </div>
+                <!-- End Input -->
+                <!-- Button -->
+                <div class="row align-items-center mb-5">
+                    <div class="col-12 col-sm-12 text-right">
+                        <button type="button" class="btn btn-primary transition-3d-hover" id="btn-submit">Guardar</button>
+                        <button type="button" class="btn btn-danger transition-3d-hover" id="btn-eliminar">Eliminar</button>
+                        <button type="reset" class="btn btn-secondary transition-3d-hover">Limpiar</button>
+                        <a class="btn btn-secondary transition-3d-hover" href="Listar" role="button">Regresar</a>
+                    </div>
+                </div>
+                <!-- End Button -->
+            </form>
+            <!-- End Form -->
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $.HSCore.components.HSValidation.init('.js-validate');
+        });
+    </script>
+</div>

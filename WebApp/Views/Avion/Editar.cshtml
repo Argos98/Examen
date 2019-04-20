@@ -1,0 +1,72 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Avion/Editar.js"></script>
+@{
+    ViewBag.Title = "Editar avión";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Editar avión" })
+
+<div class="container space-1 space-bottom-md-3">
+    <!-- Form -->
+    <form class="js-validate" id="frmEdition">
+        <!-- Title -->
+        <div class="mb-7">
+            <h1 class="h3 text-primary font-weight-normal mb-0">Editar aerolínea</h1>
+        </div>
+        <!-- End Title -->
+        <!-- mensajes del webapi y div del loading-->
+        <div class="loader"></div>
+        <div class="alert alert-warning alert-dismissible fade show d-none js-login-message" id="alert_container" role="alert">
+            <span id="alert_message"></span>
+        </div>
+        <p>Campos requeridos <span class="text-danger">*</span></p>
+        <!-- Fin mensajes del webapi y div del loading-->
+        <div class="row">
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "Matricula", type: "text", label: "Matrícula ", placeHolder: "Matrícula ", required: true, mensajeValidacion: "Por favor ingrese la matrícula .")
+            </div>
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "TipoAvion", type: "text", label: "Tipo de avión", placeHolder: "Tipo de avión", required: true, mensajeValidacion: "Por favor ingrese el tipo de avión.")
+            </div>
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "Fabricante", type: "text", label: "Fabricante", placeHolder: "Fabricante", required: true, mensajeValidacion: "Por favor ingrese el fabricante.")
+            </div>
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "CapacidadKg", type: "text", label: "Capacidad (kg)", placeHolder: "Capacidad (kg)", required: true, mensajeValidacion: "Por favor ingrese la capacidad de carga en kilogramos")
+            </div>
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "CantidadPasajeros", type: "text", label: "Cantidad de pasajeros", placeHolder: "Cantidad de pasajeros", required: true, mensajeValidacion: "Por favor ingrese la cantidad de pasajeros")
+            </div>
+            <div class="col-sm-6 mb-6">
+                @Html.CtrlInput(id: "AnoFabricacion", type: "text", label: "Año de fabricación", placeHolder: "Año de fabricación", required: true, mensajeValidacion: "Por favor ingrese el año de fabricación.")
+            </div>
+            <div class="col-sm-6 mb-6">
+                <div class="form-group">
+                    <label for="Estado">Estado <span class="text-danger">*</span></label>
+                    <select class="form-control js-form-filter-control" id="Estado" required>
+                        <option value="">-- Seleccione una opción --</option>
+                        <option value="HA">Habilitado</option>
+                        <option value="DH">Deshabilitado</option>
+                    </select>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row align-items-center mb-5">
+            <div class="col-12 col-sm-12 text-right">
+                <button type="button" class="btn btn-primary transition-3d-hover" id="btn-submit">Guardar</button>
+                <button type="button" class="btn btn-danger transition-3d-hover" id="btn-eliminar">Eliminar</button>
+                <a class="btn btn-secondary transition-3d-hover" href='@Url.Action("Listar","Avion")' role="button">Regresar</a>
+                <!--<a class="btn btn-secondary transition-3d-hover" href="Listar" role="button">Regresar</a>-->
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function () {
+       $.HSCore.components.HSValidation.init('.js-validate');
+    });
+</script>

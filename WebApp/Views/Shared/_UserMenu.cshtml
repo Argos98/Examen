@@ -1,0 +1,109 @@
+﻿<ul class="navbar-nav u-header__navbar-nav d-none" id="super-admin-dashmenu">
+    <!-- General -->
+    <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+        <a id="generalDropdown" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="generalDropdownMenu">
+            General
+        </a>
+        <ul id="generalDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer animated fadeOut" style="min-width: 230px; display: none;" aria-labelledby="generalDropdown">
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("/Index")">Dashboard</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Perfil</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("CambiarContrasena", "Dashboard")">Modificar contraseña</a></li>
+        </ul>
+    </li>
+
+    <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+        <a id="accountSettingsDropdown" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="accountSettingsDropdownMenu">
+            Usuarios
+        </a>
+        <ul id="accountSettingsDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer animated fadeOut" style="min-width: 230px; display: none;" aria-labelledby="accountSettingsDropdown">
+            <li><a class="nav-link u-header__sub-menu-nav-link" href='@Url.Action("Listar", "Usuario")'>Lista usuarios</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("Registrar","Usuario")">Registrar usuario</a></li>
+        </ul>
+    </li>
+
+    <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+        <a id="billingDropdown" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="billingDropdownMenu">
+            Aeropuertos
+        </a>
+        <ul id="billingDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer animated fadeOut" style="min-width: 230px; display: none;" aria-labelledby="billingDropdown">
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("Listar","Aeropuerto")">Lista aeropuertos</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("Registrar","Aeropuerto")">Registrar aeropuerto</a></li>
+        </ul>
+    </li>
+    <!-- Billing -->
+</ul>
+
+<ul class="navbar-nav u-header__navbar-nav d-none" id="admin-aeropuerto-dashmenu">
+    <!-- General -->
+    <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+        <a id="generalDropdown" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="generalDropdownMenu">
+            General
+        </a>
+        <ul id="generalDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer animated fadeOut" style="min-width: 230px; display: none;" aria-labelledby="generalDropdown">
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("/Index")">Dashboard</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Perfil</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("CambiarContrasena", "Dashboard")">Modificar contraseña</a></li>
+        </ul>
+    </li>
+
+    <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+        <a id="accountSettingsDropdown" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="accountSettingsDropdownMenu">
+            Usuarios
+        </a>
+        <ul id="accountSettingsDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer animated fadeOut" style="min-width: 230px; display: none;" aria-labelledby="accountSettingsDropdown">
+            <li><a class="nav-link u-header__sub-menu-nav-link" href='@Url.Action("Listar", "Usuario")'>Lista usuarios</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("Registrar","Usuario")">Registrar usuario</a></li>
+        </ul>
+    </li>
+
+    <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+        <a id="billingDropdown" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="billingDropdownMenu">
+            Aeropuerto
+        </a>
+        <ul id="billingDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer animated fadeOut" style="min-width: 230px; display: none;" aria-labelledby="billingDropdown">
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("Listar","Aeropuerto")">Lista aeropuertos</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("Registrar","Aeropuerto")">Registrar aeropuerto</a></li>
+        </ul>
+    </li>
+    <!-- Billing -->
+</ul>
+
+<ul class="navbar-nav u-header__navbar-nav d-none" id="admin-aerolinea-dashmenu">
+    <!-- General -->
+    <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+        <a id="generalDropdown" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="generalDropdownMenu">
+            General
+        </a>
+        <ul id="generalDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer animated fadeOut" style="min-width: 230px; display: none;" aria-labelledby="generalDropdown">
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("/Index")">Dashboard</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Perfil</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("CambiarContrasena", "Dashboard")">Modificar contraseña</a></li>
+        </ul>
+    </li>
+
+    <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+        <a id="billingDropdown" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="billingDropdownMenu">
+            Aerolínea
+        </a>
+        <ul id="billingDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer animated fadeOut" style="min-width: 230px; display: none;" aria-labelledby="billingDropdown">
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("ListarParaAdminAerolinea","Aeropuerto")">Lista aeropuertos</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("RegistrarParaAdminAerolinea","Aerolinea")">Registrar aerolínea</a></li>
+        </ul>
+    </li>
+    <!-- Billing -->
+</ul>
+
+<ul class="navbar-nav u-header__navbar-nav d-none" id="cliente-dashmenu">
+    <!-- General -->
+    <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+        <a id="generalDropdown" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="generalDropdownMenu">
+            General
+        </a>
+        <ul id="generalDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer animated fadeOut" style="min-width: 230px; display: none;" aria-labelledby="generalDropdown">
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("/Index")">Dashboard</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Perfil</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("EditarUsuario", "Dashboard")">Editar perfil</a></li>
+            <li><a class="nav-link u-header__sub-menu-nav-link" href="@Url.Action("CambiarContrasena", "Dashboard")">Modificar contraseña</a></li>
+        </ul>
+    </li>
+</ul>

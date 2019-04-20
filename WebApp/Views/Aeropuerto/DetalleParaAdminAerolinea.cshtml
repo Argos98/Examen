@@ -1,0 +1,127 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Aeropuerto/DetalleParaAdminAerolinea.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAFEGvdjrsYZKxATWfFydBizVApTh11dnM&callback=initMap" async defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="../../../Scripts/zoom-marker.min.js"></script>
+<script type="text/javascript" src="../../../Scripts/zoom-marker.js"></script>
+<script type="text/javascript" src="../../../Scripts/hammer.js"></script>
+
+
+@{
+    ViewBag.Title = "Detalle aeropuerto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Detalle aeropuerto" })
+
+<div class="container space-1 space-bottom-md-3">
+    <div class="row">
+
+
+        <div class="col-8 card shadow-sm p-7">
+            <!-- Title -->
+            <div class="mb-7">
+                <h1 class="h3 text-primary font-weight-normal mb-0">Detalle del aeropuerto</h1>
+            </div>
+
+            <div class="card shadow-sm p-5 mb-4 js-admin-details">
+                <div class="card-header">
+                    <h2 class="h6">Detalles del administrador:</h2>
+                    <p class="card-text h6"><b>Nombre:</b> <span id="nombre"></span></p>
+                    <p class="card-text h6"><b>Correo electrónico:</b> <span id="correoElectronico"></span></p>
+                    <p class="card-text h6"><b>Número de teléfono:</b> <span id="telefono"></span></p>
+                </div>
+            </div>
+            <!-- End Title -->
+            <div class="card shadow-sm p-5">
+                <div class="card-header">
+                    <h2 class="h6">Nombre:</h2>
+                    <p class="card-text h6" id="Nombre"></p>
+                </div>
+                <div class="card-header">
+                    <h2 class="h6">Código:</h2>
+                    <p class="card-text h6" id="CodigoAeropuerto"></p>
+                </div>
+                <div class="card-header">
+                    <h2 class="h6">Dirección:</h2>
+                    <p class="card-text h6" id="Direccion"></p>
+                    <p class="card-text h6" id="Ciudad"></p>
+                    <p class="card-text h6" id="Pais"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Vuelos por hora:</h2>
+                    <p class="card-text h6" id="VuelosHora"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Porcentaje de comisión por boleto:</h2>
+                    <p class="card-text h6" id="PorcentajeComisionBoletos"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Porcentaje de impuesto de ventas:</h2>
+                    <p class="card-text h6" id="PorcentajeImpuestoVentas"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Comisión por uso de una puerta:</h2>
+                    <p class="card-text h6" id="ComisionUsoPuerta"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Comisión por uso de un parqueo:</h2>
+                    <p class="card-text h6" id="ComisionUsoParqueo"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Comisión por uso de una pista:</h2>
+                    <p class="card-text h6" id="ComisionUsoPista"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Zona horaria:</h2>
+                    <p class="card-text h6" id="ZonaHoraria"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Moneda:</h2>
+                    <p class="card-text h6" id="Moneda"></p>
+                </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Estado:</h2>
+                    <p class="card-text h6" id="Estado"></p>
+                </div>
+
+                <div class="card-header" id="dvMap" style="height:250px;"> </div>
+
+                <div class="card-header">
+                    <h2 class="h6">Mapa del aeropuerto:</h2>
+                    <img id="viewArea" name="viewArea" draggable="false">
+                </div>
+
+            </div>
+            <!-- Button -->
+            <div class="row align-items-center mt-5">
+                <div class="col-12 col-sm-12 text-right">
+                    <div class="col-12 col-sm-12 text-right">
+                        <a class="btn btn-secondary transition-3d-hover" href='@Url.Action("ListarParaAdminAerolinea","Aeropuerto")' role="button">Regresar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Button -->
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.HSCore.components.HSValidation.init('.js-validate');
+
+        // initialization of autonomous popups
+        $.HSCore.components.HSModalWindow.init('[data-modal-target]', '.js-modal-window', {
+            autonomous: true
+        });
+    });
+</script>

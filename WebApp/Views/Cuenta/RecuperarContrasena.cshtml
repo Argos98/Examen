@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    ViewBag.Title = "Recuperar contrasena";
+}
+
+<div class="container">
+    <div class="row no-gutters">
+        <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-3 space-lg-0">
+            <!-- Form -->
+            <form class="js-validate mt-5" novalidate="novalidate">
+                <!-- Title -->
+                <div class="mb-7">
+                    <h1 class="h3 text-primary font-weight-normal mb-0">¿Olvidó su <span class="font-weight-semi-bold">contraseña?</span></h1>
+                    <p>Ingrese su correo electrónico.</p>
+                </div>
+                <!-- End Title -->
+                <!-- Form Group -->
+                <div class="js-form-message form-group">
+                    <label class="form-label" for="signinSrEmail">Correo electrónico</label>
+                    <input type="email" class="form-control" name="email" id="signinSrEmail" placeholder="usuario@mail.com" aria-label="Correo electrónico" required="" data-msg="Digite un correo electrónico válido" data-error-class="u-has-error" data-success-class="u-has-success">
+                </div>
+                <!-- End Form Group -->
+                <!-- Button -->
+                <div class="row align-items-center mb-5">
+                    <div class="col-4 col-sm-6">
+                        <span class="small text-muted">¿Ya tiene una cuenta?</span>
+                        <a class="small" href="@Url.Action("/InicioSesion")">Ingresar</a>
+                    </div>
+                    <div class="col-8 col-sm-6 text-right">
+                        <button type="submit" class="btn btn-primary transition-3d-hover">Recuperar contraseña</button>
+                    </div>
+                </div>
+                <!-- End Button -->
+            </form>
+            <!-- End Form -->
+        </div>
+    </div>
+</div>

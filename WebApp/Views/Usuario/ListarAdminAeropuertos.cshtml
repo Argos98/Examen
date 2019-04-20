@@ -1,0 +1,36 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/Usuario/Listar.js"></script>
+@{
+    ViewBag.Title = "Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderPage("~/Views/Shared/_AdminInnerMenu.cshtml", new { Title = "Usuarios"})
+
+<div class="container space-1">
+    <div class="row justify-content-end">
+        <a class="btn btn-primary" href='@Url.Action("Registrar", "Usuario")'>Registrar usuario</a>
+    </div>
+</div>
+
+
+<div class="container space-bottom-md-3" id="tab-admin-aeropuerto-list">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Aeropuerto</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("ListarAdminAerolineas", "Usuario")">Aerolíneas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("ListarClientes", "Usuario")">Clientes</a>
+        </li>
+    </ul>
+
+    @Html.CtrlTable(viewName: "vUsuarios", id: "tblUsuarios", title: "Administradores y Asistentes de Aeropuerto",
+    columnsTitle: "IdUsuario,Correo electrónico,Identificación,Nombre,Primer apellido,Rol,Acciones",
+    ColumnsDataName: "IdUsuario,CorreoElectronico,Identificacion,Nombre,PrimerApellido,Rol", onSelectFunction: "BindFields")
+</div>
+
+
+
